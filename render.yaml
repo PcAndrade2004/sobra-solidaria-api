@@ -1,0 +1,16 @@
+# Blueprint opcional do Render (New > Blueprint). Também dá para criar o Web Service manualmente.
+services:
+  - type: web
+    name: sobra-solidaria-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: DB_URL
+        sync: false          # informe no painel do Render (valores não ficam no repositório)
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: CORS_ALLOWED_ORIGINS
+        value: "*"
